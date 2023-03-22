@@ -69,10 +69,14 @@ app.get('/ajaxmessage', function (req, res) {
 });
 
 app.post('/ajaxmessage', (req, res) => {
+    if(!req.body.name || !req.body.country || !req.body.message) {
+        res.send('One or more fields are empty. Please fill in all required fields.');
+    }else{
 	const name = req.body.name;
 	const country = req.body.country;
     const message = req.body.message;
 	res.send(`Name: ${name}, Country: ${country}, Message: ${message}`);
+    }
 });
 
 app.get('/*', function (req, res) {
