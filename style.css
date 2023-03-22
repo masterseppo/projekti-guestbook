@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f00;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    flex-basis: 70%;
+    margin-bottom: 20px;
+}
+
+aside {
+    flex-basis: 25%;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+footer {
+    margin-top: auto;
+}
+
+table.my-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table.my-table td, .my-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  table.my-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table.my-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .my-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .my-table td, .my-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .my-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .my-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+  }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax Message</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+	<h1>Ajax</h1>
+	<form id="myForm">
+		<label for="userName">Username:</label>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="country">Country:</label>
+		<input type="text" id="country" name="country"><br><br>
+        <label for="message">Message:</label>
+		<input type="text" id="message" name="message"><br><br>
+		<button type="submit" class="btn btn-primary" id="submit">Submit</button>
+	</form>
+	<div id="response"></div>
+
+	<script>
+		$(document).ready(function() {
+			$('#myForm').submit(function(event) {
+				event.preventDefault();
+				var formData = {
+					name: $('#name').val(),
+					country: $('#country').val(),
+                    message: $('#message').val()
+				};
+				$.ajax({
+					type: 'POST',
+					url: '/ajaxmessage',
+					data: formData,
+					success: function(response) {
+						$('#response').html(response);
+					},
+					error: function(error) {
+						console.log(error);
+					}
+				});
+			});
+		});
+	</script>
+</body>
+</html>
