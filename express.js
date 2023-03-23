@@ -5,6 +5,7 @@ var path = require("path");
 
 //Require the module required for using form data
 var bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
@@ -15,23 +16,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/guestbook', function (req, res) {
-    
-    var data = require('./data.json');
-    var results = '<head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"></head><table class = "table">';
-    results +=
-      "<th>" + "Name" + "</th>"
-    + "<th>" + "Country" + "</th>"
-    + "<th>" + "Message" + "</th>";
-    for (var i = 0; i < data.length; i++) {
-        results +=
-        '<tr>' +
-        '<td>' + data[i].username + '</td>' +
-        '<td>' + data[i].country + '</td>' + 
-        '<td>' + data[i].message + '</td>' +
-        '</tr>';
-    }
-    results += '</table>';
-    res.send(results);
+    res.sendFile(__dirname + '/guestbook.html');
 });
 
 app.get('/newmessage', function (req, res) {
